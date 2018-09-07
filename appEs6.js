@@ -108,13 +108,13 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 
   if (title === '' || author === '' || isbn === '')
   {
-    ui.showAlert('Please fill up all fields - es6', 'error')
+    ui.showAlert('Please fill up all fields', 'error')
   } else {
     ui.addToBookList(book);
     bookStorage = new Storage('books');
     bookStorage.addItem(book);
     ui.clearFields();
-    ui.showAlert('Form is submitted successfully - es6', 'success')
+    ui.showAlert('Form is submitted successfully', 'success')
   }
   
   e.preventDefault();
@@ -127,7 +127,7 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
   const isbn = e.target.parentElement.previousElementSibling.textContent;
 
   ui.deleteBook(e.target);
-  ui.showAlert('Item Deleted successfully - es6', 'success');
+  ui.showAlert('Item Deleted successfully', 'success');
   bookStorage.removeItem({'isbn':isbn})
   e.preventDefault();
 });
